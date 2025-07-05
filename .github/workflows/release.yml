@@ -6,9 +6,9 @@ on:
       - "v*"
 
 jobs:
-    build-test:
-      name: 🧪 Build, Lint & Test
-      runs-on: ubuntu-latest
+  build-test:
+    name: 🧪 Build, Lint & Test
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
