@@ -1,0 +1,31 @@
+[package]
+name = "file_encryptor"
+version = "0.1.5"
+edition = "2024"
+authors = ["Milad <miladtsx@gmail.com>"]
+license = "MIT"
+description = "A simple libsodium-based file encryption/decryption CLI"
+repository = "https://github.com/miladtsx/cipher_file"
+readme = "README_crates.md"
+keywords = ["cli", "encryption", "sodiumoxide", "crypto"]
+categories = ["command-line-utilities", "cryptography"]
+
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+sodiumoxide = "0.2.7"
+
+[lib]
+name = "file_encryptor"
+path = "src/lib.rs"
+
+
+[[bin]]
+name = "file_encryptor"
+path = "src/main.rs"
+
+
+[package.metadata.tarpaulin]
+run_types = ["Tests"]
+line_coverage = true
+branch_coverage = true
