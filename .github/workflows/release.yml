@@ -6,6 +6,19 @@ on:
       - "v*"
 
 jobs:
+    build-test:
+      name: 🧪 Build, Lint & Test
+      runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: 🧪 Run tests
+        run: cargo test --verbose
+      - name: 🧹 Check formatting
+        run: cargo fmt --check
+      - name: 🧼 Run Clippy (lint)
+        run: cargo clippy -- -D warnings
+
   publish:
     name: 📦 Publish to crates.io
     needs: build-test
